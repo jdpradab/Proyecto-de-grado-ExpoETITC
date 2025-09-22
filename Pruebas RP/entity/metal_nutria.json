@@ -1,0 +1,61 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "tk:metal_nutria",
+			"materials": {
+				"default": "entity_alphatest",
+				"metal_nutria_light": "metal_nutria_light"
+			},
+			"textures": {
+				"default": "textures/entity/metal_nutria/Metal_Nutria",
+				"metal_nutria_light": "textures/entity/metal_nutria/Metal_Nutria_light"
+			},
+			"geometry": {
+				"default": "geometry.metal_nutria",
+				"metal_nutria_light": "geometry.metal_nutria_light"
+			},
+			"render_controllers": [
+				"controller.render.metal_nutria",
+				"controller.render.metal_nutria_light"
+			],
+			"spawn_egg": {
+				"texture": "metal_nutria_egg",
+				"texture_index": 0
+			},
+			"animations": {
+				"metal_nutria_general": "animation.metal_nutria.idle",
+				"moving": "animation.metal_nutria.walk",
+				"falling": "animation.metal_nutria.falling",
+				"run": "animation.metal_nutria.run",
+				"attack1": "animation.metal_nutria.attack1",
+				"attack2": "animation.metal_nutria.attack2",
+				"attack3": "animation.metal_nutria.attack3",
+				"attack4": "animation.metal_nutria.attack4",
+				"look_at_target": "animation.common.look_at_target",
+				"fight": "animation.metal_nutria.fight",
+				"alert": "animation.metal_nutria.alert",
+				"blockade": "animation.metal_nutria.blockade",
+				"fly1": "animation.metal_nutria.fly1",
+				"fly2": "animation.metal_nutria.fly2",
+				"stunned": "animation.metal_nutria.stunned",
+				"demage": "animation.metal_nutria.demage",
+				"reactivation": "animation.metal_nutria.reactivation",
+				"dead": "animation.metal_nutria.dead",
+				"impulse": "animation.metal_nutria.impulse",
+				"general": "controller.animation.metal_nutria.general"
+			},
+			"scripts": {
+				"animate": [
+					"general"
+				],
+				"pre_animation": [
+					"variable.attack = Math.sin(variable.attack_time * 30.0);",
+					"variable.random = math.round(math.random(0,1));",
+					"variable.random = math.round(math.random(0,2));",
+					"variable.roar_length = 1.0;"
+				]
+			}
+		}
+	}
+}

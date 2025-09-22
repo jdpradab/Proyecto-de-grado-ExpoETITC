@@ -1,0 +1,50 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "§l§4Tinker´s rescue",
+		"description": "Para hacer pruebas :]",
+		"uuid": "12539d40-391c-43be-4cd5-b595f177f61e",
+		"version": [
+			1,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			16,
+			0
+		]
+	},
+	"modules": [
+		{
+			"description": "Pruebas",
+			"type": "resources",
+			"uuid": "bb44398b-f5f0-2b80-2b38-78aa57b669f1",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "bd164a29-a4ac-a898-cfde-b10f7bae7636",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"metadata": {
+		"generated_with": {
+			"bridge": [
+				"2.7.44"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	}
+}

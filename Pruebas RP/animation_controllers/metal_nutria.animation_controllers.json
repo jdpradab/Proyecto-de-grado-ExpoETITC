@@ -1,0 +1,130 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.metal_nutria.general": {
+			"initial_state": "moving",
+			"states": {
+				"moving": {
+					"variables": {
+						"move_speed": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 0,
+								"0.1": 1
+							}
+						},
+						"is_idling": {
+							"input": "query.modified_move_speed",
+							"remap_curve": {
+								"0.0": 1,
+								"0.1": 0
+							}
+						}
+					},
+					"animations": [
+						{
+							"moving": "variable.move_speed"
+						},
+						{
+							"metal_nutria_general": "variable.is_idling"
+						},
+						"look_at_target"
+					],
+					"transitions": [
+						{
+							"run": "query.ground_speed>=3.4"
+						},
+						{
+							"falling": "!query.is_delayed_attacking&&!query.is_on_ground"
+						},
+						{
+							"attack1": "query.is_delayed_attacking&&variable.random==0"
+						},
+						{
+							"attack3": "query.is_delayed_attacking&&variable.random==1"
+						},
+						{
+							"impulse": "query.is_roaring==1"
+						},
+						{
+							"stunned": "query.is_stunned==1"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"run": {
+					"animations": [
+						"run"
+					],
+					"transitions": [
+						{
+							"moving": "query.ground_speed<=2"
+						},
+						{
+							"attack1": "query.is_delayed_attacking&&variable.random==0"
+						},
+						{
+							"attack3": "query.is_delayed_attacking&&variable.random==1"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"falling": {
+					"animations": [
+						"falling"
+					],
+					"transitions": [
+						{
+							"moving": "query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"attack1": {
+					"animations": [
+						"attack1"
+					],
+					"transitions": [
+						{
+							"moving": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"attack3": {
+					"animations": [
+						"attack3"
+					],
+					"transitions": [
+						{
+							"moving": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"impulse": {
+					"animations": [
+						"impulse"
+					],
+					"transitions": [
+						{
+							"moving": "query.is_roaring==0"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"stunned": {
+					"animations": [
+						"stunned"
+					],
+					"transitions": [
+						{
+							"moving": "query.is_stunned==0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

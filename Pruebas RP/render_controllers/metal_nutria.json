@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.metal_nutria": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.metal_nutria_light": {
+			"geometry": "geometry.metal_nutria_light",
+			"materials": [
+				{
+					"*": "material.metal_nutria_light"
+				}
+			],
+			"textures": [
+				"texture.metal_nutria_light"
+			],
+			"ignore_lighting": true,
+			"light_color_multiplier": 1
+		}
+	}
+}
